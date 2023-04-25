@@ -130,6 +130,7 @@
             this.btnReemplazar.TabIndex = 9;
             this.btnReemplazar.Text = "Reemplazar";
             this.btnReemplazar.UseVisualStyleBackColor = true;
+            this.btnReemplazar.Click += new System.EventHandler(this.btnReemplazar_Click);
             // 
             // btnBuscar
             // 

@@ -36,6 +36,15 @@ namespace pryRodriguezCadenasTexto
         {
             txtBuscar.Visible = true;
 
+            if (TextoA.IndexOf(txtBuscar.Text) != -1)
+            {
+                txtBuscar.BackColor = Color.Green;
+            }
+            else
+            {
+                txtBuscar.BackColor = Color.Red;
+            }
+
         }
 
         private void btnComparar_Click(object sender, EventArgs e)
@@ -50,13 +59,13 @@ namespace pryRodriguezCadenasTexto
             }
             else
             {
-                if (resultado<0)
+                if (resultado>0)
                 {
                     MessageBox.Show("La cadena B tiene mayor cantidad de caracteres");
                 }
                 else
                 {
-                    if (resultado>0)
+                    if (resultado<0)
                     {
                         MessageBox.Show("La cadena A tiene mayor cantidad de caracteres");
                     }
@@ -66,10 +75,17 @@ namespace pryRodriguezCadenasTexto
 
         private void btnConveritr_Click(object sender, EventArgs e)
         {
+            DateTime A = dtpFecha.Value;
+            string B = A.ToString("dd/mm/yyyy");
+            lblMostrarFecha.Text = B;
+        }
+
+        private void btnReemplazar_Click(object sender, EventArgs e)
+        {
             TextoA = txtTextoA.Text;
             string stringB = "";
             stringB = TextoA.Replace(TextoA, txtTextoB.Text);
-            txtTextoA.Text=stringB;
+            txtTextoA.Text = stringB;
             txtTextoB.Clear();
         }
     }
